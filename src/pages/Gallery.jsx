@@ -41,8 +41,8 @@ const Gallery = () => {
       {/* Hero Section */}
       <section className="gallery-hero">
         <div className="gallery-hero-content">
-          <h1 className="fade-in">Culinary Gallery</h1>
-          <p className="fade-in">A showcase of my culinary creations and signature dishes</p>
+          <h1 className="fade-in">Culinary Portfolio</h1>
+          <p className="fade-in">A showcase of Chef Daniel Racine's culinary artistry and innovative creations</p>
         </div>
       </section>
 

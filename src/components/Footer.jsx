@@ -9,21 +9,18 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content container">
         <div className="footer-section">
-          <h3>Chef Portfolio</h3>
-          <p>Culinary excellence with over 30 years of professional experience in fine dining and yacht catering.</p>
+          <h3>Chef Daniel Racine</h3>
+          <p>Red Seal–certified Executive Chef with over two decades of culinary leadership across fine-dining restaurants and hospitality groups.</p>
         </div>
 
         <div className="footer-section">
           <h4>Contact</h4>
           <div className="footer-links">
-            <a href="tel:+33615301594" className="footer-link">
-              <FaPhone /> +33(0)6 15 30 15 94
-            </a>
-            <a href="mailto:chef@example.com" className="footer-link">
-              <FaEnvelope /> chef@example.com
+            <a href="mailto:chefdaniel2012@live.com" className="footer-link">
+              <FaEnvelope /> chefdaniel2012@live.com
             </a>
             <div className="footer-link">
-              <FaMapMarkerAlt /> Valbonne, France
+              <FaMapMarkerAlt /> Toronto, Canada
             </div>
           </div>
         </div>

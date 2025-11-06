@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FaUtensils, FaAward, FaStar, FaArrowRight } from 'react-icons/fa'
+import { FaUtensils, FaAward, FaStar, FaArrowRight, FaTv, FaBook, FaHeart } from 'react-icons/fa'
 import './Home.css'
 
 const Home = () => {
@@ -9,9 +9,15 @@ const Home = () => {
   }, [])
 
   const specialties = [
-    { icon: <FaUtensils />, title: 'Fine Dining', description: 'Expertise in Michelin-starred restaurants' },
-    { icon: <FaAward />, title: 'Yacht Catering', description: '18 years on luxury superyachts' },
-    { icon: <FaStar />, title: 'International Cuisine', description: 'Master of diverse culinary styles' }
+    { icon: <FaUtensils />, title: 'Multi-Unit Leadership', description: 'Corporate Executive Chef managing restaurant groups' },
+    { icon: <FaAward />, title: 'Menu Innovation', description: 'Middle Eastern, French, Italian, Asian & Mediterranean' },
+    { icon: <FaStar />, title: 'Event Excellence', description: 'Large-scale venues and fine-dining experiences' }
+  ]
+
+  const achievements = [
+    { icon: <FaTv />, title: 'The County Chef', description: 'Co-producer & host of culinary television series' },
+    { icon: <FaBook />, title: 'Published Author', description: 'Creator of "A Gift From The Stars" celebrity cookbook' },
+    { icon: <FaHeart />, title: 'Community Impact', description: 'Charity work with Daily Bread Food Bank' }
   ]
 
   return (
@@ -20,8 +26,9 @@ const Home = () => {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="hero-title fade-in">Culinary Excellence</h1>
-          <p className="hero-subtitle fade-in">Professional Chef with 30+ Years of Experience</p>
+          <p className="hero-subtitle-top fade-in">Red Seal Certified Executive Chef</p>
+          <h1 className="hero-title fade-in">Chef Daniel Racine</h1>
+          <p className="hero-subtitle fade-in">Culinary Leadership & Innovation Across Toronto's Finest Establishments</p>
           <div className="hero-buttons fade-in">
             <Link to="/gallery" className="btn btn-primary">
               View Gallery <FaArrowRight />
@@ -36,6 +43,38 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Bio Highlight Section */}
+      <section className="bio-highlight section-padding">
+        <div className="container">
+          <div className="bio-card">
+            <div className="bio-badge">
+              <FaAward />
+              <span>Red Seal Certified</span>
+            </div>
+            <h2 className="bio-title">Executive Chef & Culinary Director</h2>
+            <p className="bio-lead">
+              A Red Seal–certified Executive Chef with over two decades of culinary leadership, Daniel Racine 
+              has built a distinguished career overseeing fine-dining restaurants, hospitality groups, and 
+              large-scale event venues across Toronto.
+            </p>
+            <div className="bio-stats">
+              <div className="stat-item">
+                <span className="stat-number">20+</span>
+                <span className="stat-label">Years Experience</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">5</span>
+                <span className="stat-label">Cuisine Specialties</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">3</span>
+                <span className="stat-label">Media Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="about-section section-padding">
         <div className="container">
@@ -43,26 +82,30 @@ const Home = () => {
             <div className="about-image">
               <div className="image-placeholder">
                 <FaUtensils className="placeholder-icon" />
-                <p>Chef Photo</p>
+                <p>Chef Daniel Racine</p>
+              </div>
+              <div className="image-overlay-badge">
+                <span>Red Seal Certified</span>
               </div>
             </div>
             <div className="about-content">
-              <h2 className="section-title">About Me</h2>
+              <h2 className="section-title">Culinary Vision & Expertise</h2>
               <div className="title-underline"></div>
               <p className="about-text">
-                I have been a Chef since I left school over 40 years ago. I went to Westminster College 
-                of Cooking and then went on to work in 5 star hotels; The Ritz in London and The Cavendish Hotel.
+                Known for creative versatility, Chef Racine specializes in <strong>Middle Eastern, French, Italian, 
+                Asian fusion, and Mediterranean cuisines</strong>—crafting menus that balance authenticity, innovation, 
+                and visual artistry.
               </p>
               <p className="about-text">
-                I then went on to work for the oil company Shell at their head office in The Strand, London, 
-                cooking for the directors. I have also worked at the famous 3 star Michelin Roux Brothers 
-                'le Gavroche' Hyde Park, London.
+                Recent work includes launching <strong>Muse Bistro-Bar</strong> at The Toot Hotel with The Fifteen Group, 
+                leading <strong>Grand Bizarre Supper Club and Event Centre</strong>, and serving as Corporate Executive 
+                Chef for the <strong>IL Fornello Restaurant Group</strong>, where he managed multi-unit operations and 
+                menu development.
               </p>
               <p className="about-text">
-                Before joining the yachting industry but getting to the water I was the Executive Head Chef 
-                at the Hurlingham Club Fulham, London. After joining the yachting industry over 20 years ago 
-                I have worked on yachts from 40 – 70 metres together with luxury villas chef positions out of 
-                season in the south of France.
+                Beyond operational excellence, Chef Racine is a recognized media presence and culinary ambassador. 
+                Celebrated by <strong>The Globe and Mail, Toronto Star, and Toronto Life</strong> for his imaginative 
+                presentations and refined palate.
               </p>
               <Link to="/cv" className="btn btn-outline">
                 View Full CV <FaArrowRight />
@@ -75,7 +118,7 @@ const Home = () => {
       {/* Specialties Section */}
       <section className="specialties-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center">My Specialties</h2>
+          <h2 className="section-title text-center">Professional Excellence</h2>
           <div className="title-underline center"></div>
           <div className="specialties-grid">
             {specialties.map((specialty, index) => (
@@ -89,20 +132,60 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Media & Recognition Section */}
+      <section className="achievements-section section-padding">
+        <div className="container">
+          <h2 className="section-title text-center">Media & Community Impact</h2>
+          <div className="title-underline center"></div>
+          <p className="section-intro">
+            Combining culinary artistry with community engagement and media presence
+          </p>
+          <div className="achievements-grid">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="achievement-card">
+                <div className="achievement-icon">{achievement.icon}</div>
+                <h3>{achievement.title}</h3>
+                <p>{achievement.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="media-mentions">
+            <p className="mentions-label">Featured In:</p>
+            <div className="mentions-list">
+              <span className="mention-badge">The Globe and Mail</span>
+              <span className="mention-badge">Toronto Star</span>
+              <span className="mention-badge">Toronto Life</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Cuisines */}
       <section className="cuisines-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center">Signature Cuisines</h2>
+          <h2 className="section-title text-center">Culinary Specialties</h2>
           <div className="title-underline center"></div>
-          <div className="cuisines-grid">
+          <p className="section-intro">
+            Mastery across diverse culinary traditions, balancing authenticity with innovation
+          </p>
+          <div className="cuisines-grid-five">
+            <div className="cuisine-card">
+              <div className="cuisine-image">
+                <div className="image-placeholder">
+                  <span>Middle Eastern</span>
+                </div>
+              </div>
+              <h3>Middle Eastern</h3>
+              <p>Rich flavors and aromatic spice profiles</p>
+            </div>
             <div className="cuisine-card">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>French</span>
                 </div>
               </div>
-              <h3>French Cuisine</h3>
-              <p>Classic French techniques with modern presentation</p>
+              <h3>French</h3>
+              <p>Classical techniques and refined presentation</p>
             </div>
             <div className="cuisine-card">
               <div className="cuisine-image">
@@ -110,17 +193,26 @@ const Home = () => {
                   <span>Italian</span>
                 </div>
               </div>
-              <h3>Italian Cuisine</h3>
-              <p>Authentic Italian flavors and regional specialties</p>
+              <h3>Italian</h3>
+              <p>Authentic traditions with modern flair</p>
             </div>
             <div className="cuisine-card">
               <div className="cuisine-image">
                 <div className="image-placeholder">
-                  <span>Asian</span>
+                  <span>Asian Fusion</span>
                 </div>
               </div>
               <h3>Asian Fusion</h3>
-              <p>Thai, Japanese, and contemporary Asian dishes</p>
+              <p>Contemporary interpretations of classic dishes</p>
+            </div>
+            <div className="cuisine-card">
+              <div className="cuisine-image">
+                <div className="image-placeholder">
+                  <span>Mediterranean</span>
+                </div>
+              </div>
+              <h3>Mediterranean</h3>
+              <p>Fresh, vibrant coastal flavors</p>
             </div>
           </div>
         </div>
@@ -129,10 +221,10 @@ const Home = () => {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>Ready to Create Something Special?</h2>
-          <p>Let's discuss your culinary needs and create an unforgettable dining experience.</p>
+          <h2>Let's Create Something Extraordinary</h2>
+          <p>Available for culinary consulting, menu development, event direction, and executive chef positions.</p>
           <Link to="/contact" className="btn btn-light">
-            Contact Me Today
+            Get in Touch
           </Link>
         </div>
       </section>

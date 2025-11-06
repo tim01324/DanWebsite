@@ -45,22 +45,16 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <FaPhone />,
-      title: 'Phone',
-      content: '+33(0)6 15 30 15 94',
-      link: 'tel:+33615301594'
-    },
-    {
       icon: <FaEnvelope />,
       title: 'Email',
-      content: 'chef@example.com',
-      link: 'mailto:chef@example.com'
+      content: 'chefdaniel2012@live.com',
+      link: 'mailto:chefdaniel2012@live.com'
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Location',
-      content: 'Valbonne, 06560, France',
-      link: 'https://maps.google.com/?q=Valbonne,France'
+      content: 'Toronto, Canada',
+      link: 'https://maps.google.com/?q=Toronto,Canada'
     }
   ]
 
@@ -82,8 +76,8 @@ const Contact = () => {
             <div className="contact-info-section">
               <h2>Contact Information</h2>
               <p className="info-description">
-                I'm available for yacht positions, private chef services, and special events. 
-                Feel free to reach out to discuss your requirements.
+                Available for culinary consulting, menu development, event direction, and executive chef positions. 
+                Let's discuss how we can work together.
               </p>
 
               <div className="contact-info-cards">
@@ -105,11 +99,10 @@ const Contact = () => {
               </div>
 
               <div className="availability-card">
-                <h3>Current Availability</h3>
+                <h3>Professional Services</h3>
                 <p>
-                  Available for yacht positions worldwide and villa chef positions 
-                  in the South of France during off-season. Also accepting bookings 
-                  for special events and private dining experiences.
+                  Culinary Consulting • Menu Development • Restaurant Operations • 
+                  Event Direction • Corporate Executive Chef Positions • Media & Brand Partnerships
                 </p>
                 <div className="availability-status">
                   <span className="status-indicator"></span>
@@ -217,8 +210,8 @@ const Contact = () => {
       <section className="map-section">
         <div className="map-placeholder">
           <FaMapMarkerAlt className="map-icon" />
-          <h3>Valbonne, France</h3>
-          <p>Located in the beautiful Provence-Alpes-Côte d'Azur region</p>
+          <h3>Toronto, Canada</h3>
+          <p>Serving Toronto's finest establishments and hospitality groups</p>
         </div>
       </section>
     </div>

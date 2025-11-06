@@ -9,65 +9,71 @@ const CV = () => {
 
   const education = [
     {
-      institution: 'Westminster College of Cooking',
-      degree: 'Professional Culinary Arts',
-      year: '1980-1982'
+      institution: 'Red Seal Certification',
+      degree: 'Executive Chef Certification',
+      year: 'Certified'
     }
   ]
 
   const experience = [
     {
-      position: 'Yacht Chef',
-      company: 'Various Luxury Superyachts',
-      period: '2003 - Present',
-      description: 'Working on yachts from 40-70 metres, providing high-end catering services for discerning clients worldwide.'
+      position: 'Executive Chef & Culinary Director',
+      company: 'Muse Bistro-Bar at The Toot Hotel (The Fifteen Group)',
+      period: '2022 - Present',
+      description: 'Led the successful launch and culinary direction of Muse Bistro-Bar, creating innovative menu concepts and overseeing all culinary operations for this high-profile establishment.'
     },
     {
-      position: 'Executive Head Chef',
-      company: 'Hurlingham Club, Fulham, London',
-      period: '2000 - 2003',
-      description: 'Led culinary operations for this prestigious private members club.'
+      position: 'Executive Chef',
+      company: 'Grand Bizarre Supper Club and Event Centre',
+      period: '2019 - 2022',
+      description: 'Directed culinary operations for this premier event venue, managing large-scale events and fine-dining experiences while maintaining exceptional quality standards.'
     },
     {
-      position: 'Chef',
-      company: 'Le Gavroche (3 Michelin Stars), London',
-      period: '1995 - 2000',
-      description: 'Worked under the legendary Roux Brothers at their three Michelin-starred restaurant.'
+      position: 'Corporate Executive Chef',
+      company: 'IL Fornello Restaurant Group',
+      period: '2015 - 2019',
+      description: 'Managed multi-unit operations, menu development, and culinary standards across the restaurant group. Oversaw staff training, cost control, and quality assurance.'
     },
     {
-      position: 'Head Chef',
-      company: 'Shell International, The Strand, London',
-      period: '1990 - 1995',
-      description: 'Prepared executive dining for company directors at their head office.'
+      position: 'Co-Producer & Host',
+      company: 'The County Chef Television Series',
+      period: '2012 - 2015',
+      description: 'Co-produced and hosted culinary television series, bringing professional cooking techniques and regional cuisine to home audiences.'
     },
     {
-      position: 'Chef',
-      company: 'The Ritz & The Cavendish Hotel, London',
-      period: '1985 - 1990',
-      description: 'Worked in 5-star hotel kitchens, mastering classical techniques and fine dining service.'
+      position: 'Executive Chef',
+      company: 'Fine Dining Restaurants - Toronto',
+      period: '2005 - 2012',
+      description: 'Led culinary teams across various Toronto fine-dining establishments, specializing in Middle Eastern, French, Italian, Asian fusion, and Mediterranean cuisines.'
     }
   ]
 
   const skills = [
-    { name: 'French Cuisine', level: 95 },
+    { name: 'Multi-Unit Operations', level: 95 },
+    { name: 'Menu Development', level: 95 },
+    { name: 'Team Leadership', level: 95 },
+    { name: 'Middle Eastern Cuisine', level: 90 },
+    { name: 'French Cuisine', level: 90 },
     { name: 'Italian Cuisine', level: 90 },
     { name: 'Asian Fusion', level: 85 },
-    { name: 'Sugar Sculptures', level: 80 },
-    { name: 'Menu Planning', level: 95 },
-    { name: 'Dietary Requirements', level: 90 }
+    { name: 'Mediterranean Cuisine', level: 90 },
+    { name: 'Cost Control & P&L', level: 90 },
+    { name: 'Event Direction', level: 90 }
   ]
 
   const specialties = [
-    'Classic French Cuisine',
-    'Modern European',
-    'Mediterranean',
-    'Asian Fusion (Thai, Japanese)',
-    'Sugar Art & Sculptures',
-    'Yacht Provisioning',
-    'Special Dietary Requirements',
-    'Gluten-Free Cuisine',
-    'Vegetarian & Vegan',
-    'Private Events Catering'
+    'Middle Eastern Cuisine',
+    'French Cuisine',
+    'Italian Cuisine',
+    'Asian Fusion',
+    'Mediterranean Cuisine',
+    'Multi-Unit Restaurant Operations',
+    'Menu Innovation & Development',
+    'Large-Scale Event Catering',
+    'Team Training & Development',
+    'Cost Control & Budget Management',
+    'Media & Brand Partnerships',
+    'Culinary Consulting'
   ]
 
   return (
@@ -75,8 +81,8 @@ const CV = () => {
       {/* Hero Section */}
       <section className="cv-hero">
         <div className="cv-hero-content">
-          <h1 className="fade-in">Curriculum Vitae</h1>
-          <p className="fade-in">Professional Chef with 30+ Years of Excellence</p>
+          <h1 className="fade-in">Chef Daniel Racine</h1>
+          <p className="fade-in">Red Seal Certified Executive Chef - 20+ Years of Culinary Leadership</p>
           <div className="cv-actions fade-in">
             <a href="/resume.pdf" download className="download-btn">
               <FaDownload /> Download PDF Resume
@@ -97,11 +103,18 @@ const CV = () => {
             </div>
             <h2>Professional Summary</h2>
             <p>
-              Highly accomplished chef with over 40 years of culinary experience, including 18 years specializing 
-              in luxury superyacht catering. Trained at Westminster College of Cooking and refined skills in 
-              prestigious establishments including The Ritz, The Cavendish Hotel, and the three Michelin-starred 
-              Le Gavroche. Expert in classical French cuisine, international culinary styles, and specialized 
-              dietary requirements. Recent specialization in sugar art and sculptures.
+              A Red Seal certified Executive Chef with over two decades of culinary leadership, Daniel Racine has 
+              built a distinguished career overseeing fine-dining restaurants, hospitality groups, and large-scale 
+              event venues across Toronto. Known for his creative versatility, Chef Racine specializes in Middle Eastern, 
+              French, Italian, Asian fusion, and Mediterranean cuisines—crafting menus that balance authenticity, 
+              innovation, and visual artistry.
+            </p>
+            <p style={{ marginTop: '20px' }}>
+              Beyond his operational excellence, Chef Racine is a recognized media presence and culinary ambassador. 
+              As co-producer and host of The County Chef television series and creator of the celebrity charity 
+              cookbook "A Gift From The Stars" for the Daily Bread Food Bank, he has combined his passion for food 
+              with community impact. Celebrated by The Globe and Mail, Toronto Star, and Toronto Life for his 
+              imaginative presentations and refined palate.
             </p>
           </div>
         </div>
@@ -208,17 +221,18 @@ const CV = () => {
           <div className="references-content">
             <p>
               Professional references and testimonials are available upon request. 
-              I have worked with numerous high-profile clients and establishments throughout my career, 
+              I have worked with leading hospitality groups, restaurant owners, and event organizers throughout Toronto, 
               and am happy to provide detailed references from:
             </p>
             <ul>
-              <li>Previous yacht owners and charter guests</li>
-              <li>Restaurant and hotel management</li>
-              <li>Private clients and event organizers</li>
-              <li>Culinary institutions and fellow professionals</li>
+              <li>Restaurant group executives and ownership</li>
+              <li>Event venue management</li>
+              <li>Media production partners</li>
+              <li>Industry colleagues and culinary professionals</li>
+              <li>Corporate clients and hospitality partners</li>
             </ul>
             <p className="references-note">
-              Please contact me directly to request reference contact information.
+              Please contact me at chefdaniel2012@live.com to request reference contact information.
             </p>
           </div>
         </div>
