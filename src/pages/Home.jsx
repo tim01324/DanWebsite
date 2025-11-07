@@ -80,10 +80,7 @@ const Home = () => {
         <div className="container">
           <div className="about-grid">
             <div className="about-image">
-              <div className="image-placeholder">
-                <FaUtensils className="placeholder-icon" />
-                <p>Chef Daniel Racine</p>
-              </div>
+              <img src="/images/chef/profile.jpg" alt="Chef Daniel Racine" className="chef-profile-photo" />
               <div className="image-overlay-badge">
                 <span>Red Seal Certified</span>
               </div>
