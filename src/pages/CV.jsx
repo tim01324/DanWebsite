@@ -20,7 +20,7 @@ const CV = () => {
       position: 'Executive Chef & Culinary Director',
       company: 'Muse Bistro-Bar at The Toot Hotel (The Fifteen Group)',
       period: '2022 - Present',
-      description: 'Led the successful launch and culinary direction of Muse Bistro-Bar, creating innovative menu concepts and overseeing all culinary operations for this high-profile establishment.'
+      description: 'Leading comprehensive culinary operations including line management, quality control, and recipe standards. Responsible for team training and mentorship, building a disciplined kitchen culture, and executing high-standard catering events both in-house and off-site. Oversee scheduling, inventory management, menu implementation, and maintain food safety standards while ensuring operational efficiency aligned with business goals.'
     },
     {
       position: 'Executive Chef',
