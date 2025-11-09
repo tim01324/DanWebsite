@@ -22,8 +22,8 @@ const CV = () => {
           })
         },
         {
-          threshold: 0.15, // 当元素15%可见时触发
-          rootMargin: '0px 0px -100px 0px' // 元素需要进入视口100px后才触发
+          threshold: 0.1, // 当元素10%可见时触发
+          rootMargin: '0px 0px -80px 0px' // 元素需要进入视口80px后才触发
         }
       )
 
@@ -56,7 +56,7 @@ const CV = () => {
   const experience = [
     {
       position: 'Executive Chef & Culinary Director',
-      company: 'Muse Bistro-Bar at The Toot Hotel (The Fifteen Group)',
+      company: 'Muse Bistro-Bar at The Toor Hotel (In coordination with The Fifteen Group)',
       period: '2022 - Present',
       description: 'Leading comprehensive culinary operations including line management, quality control, and recipe standards. Responsible for team training and mentorship, building a disciplined kitchen culture, and executing high-standard catering events both in-house and off-site. Oversee scheduling, inventory management, menu implementation, and maintain food safety standards while ensuring operational efficiency aligned with business goals.'
     },
@@ -142,17 +142,17 @@ const CV = () => {
             <h2>Professional Summary</h2>
             <p>
               A Red Seal certified Executive Chef with over two decades of culinary leadership, Daniel Racine has 
-              built a distinguished career overseeing fine-dining restaurants, hospitality groups, and large-scale 
-              event venues across Toronto. Known for his creative versatility, Chef Racine specializes in Middle Eastern, 
-              French, Italian, Asian fusion, and Mediterranean cuisines—crafting menus that balance authenticity, 
+              built a distinguished career overseeing fine-dining restaurants, elevated pubs, catering from boutique to corporate to large onsite events, hospitality groups, and large-scale 
+              event venues across Toronto. Known for his creative versatility, Chef Racine specializes in 
+              French, Italian, Asian fusion, Mediterranean, and Middle Eastern cuisines—crafting menus that balance authenticity, 
               innovation, and visual artistry.
             </p>
             <p style={{ marginTop: '20px' }}>
               Beyond his operational excellence, Chef Racine is a recognized media presence and culinary ambassador. 
               As co-producer and host of The County Chef television series and creator of the celebrity charity 
               cookbook "A Gift From The Stars" for the Daily Bread Food Bank, he has combined his passion for food 
-              with community impact. Celebrated by The Globe and Mail, Toronto Star, and Toronto Life for his 
-              imaginative presentations and refined palate.
+              with community impact. Celebrated by The Globe and Mail, Toronto Star, Toronto Life, Post City Magazine, 
+              Breakfast Television, and Rogers Morning Show for his imaginative presentations and refined palate.
             </p>
           </div>
         </div>
@@ -178,64 +178,6 @@ const CV = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Current Role Synopsis */}
-      <section className="responsibilities-section section-padding">
-        <div className="container">
-          <div className="section-header animate-on-scroll">
-            <FaUserTie className="section-icon" />
-            <h2 className="section-title">Current Role Synopsis</h2>
-            <div className="title-underline"></div>
-          </div>
-          <div className="responsibilities-container">
-            <div className="responsibility-category animate-on-scroll">
-              <h3>Line Leadership & Operations</h3>
-              <ul>
-                <li>Conduct pre-service line checks (taste, plating, mise en place).</li>
-                <li>Maintain recipe standards, portion control, and quality consistency.</li>
-                <li>Manage ticket flow, work the line or call the board when required.</li>
-              </ul>
-            </div>
-
-            <div className="responsibility-category animate-on-scroll">
-              <h3>Team Leadership & Training</h3>
-              <ul>
-                <li>Mentor cooks directly on the line.</li>
-                <li>Train and reinforce techniques, recipes, and plating standards.</li>
-                <li>Build a strong, disciplined, and motivated kitchen culture.</li>
-              </ul>
-            </div>
-
-            <div className="responsibility-category animate-on-scroll">
-              <h3>Catering Leadership</h3>
-              <ul>
-                <li>Plan and execute in-house and off-site catering events.</li>
-                <li>Lead the team in preparing, packing, and delivering catering menus at the highest standard.</li>
-                <li>Oversee staffing, logistics, and quality control for catering operations.</li>
-              </ul>
-            </div>
-
-            <div className="responsibility-category animate-on-scroll">
-              <h3>Administration</h3>
-              <ul>
-                <li>Provide input on weekly scheduling and staffing.</li>
-                <li>Order and track product needs, manage inventory par levels.</li>
-                <li>Implement new menu items with training and plating guides.</li>
-                <li>Relay kitchen updates (staffing, supply issues, equipment needs) to leadership.</li>
-              </ul>
-            </div>
-
-            <div className="responsibility-category animate-on-scroll">
-              <h3>Accountability</h3>
-              <ul>
-                <li>Ensure food safety, sanitation, and organizational standards are met daily.</li>
-                <li>Maintain labor and prep efficiency aligned with sales.</li>
-                <li>Identify and escalate challenges early with proposed solutions.</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>

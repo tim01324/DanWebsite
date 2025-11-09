@@ -23,8 +23,8 @@ const Home = () => {
           })
         },
         {
-          threshold: 0.15,
-          rootMargin: '0px 0px -100px 0px'
+          threshold: 0.1,
+          rootMargin: '0px 0px -80px 0px'
         }
       )
 
@@ -48,7 +48,7 @@ const Home = () => {
 
   const specialties = [
     { icon: <FaUtensils />, title: 'Multi-Unit Leadership', description: 'Corporate Executive Chef managing restaurant groups' },
-    { icon: <FaAward />, title: 'Menu Innovation', description: 'Middle Eastern, French, Italian, Asian & Mediterranean' },
+    { icon: <FaAward />, title: 'Menu Innovation', description: 'French, Italian, Asian, Mediterranean & Middle Eastern' },
     { icon: <FaStar />, title: 'Event Excellence', description: 'Large-scale venues and fine-dining experiences' }
   ]
 
@@ -92,7 +92,7 @@ const Home = () => {
             <h2 className="bio-title">Executive Chef & Culinary Director</h2>
             <p className="bio-lead">
               A Red Seal–certified Executive Chef with over two decades of culinary leadership, Daniel Racine 
-              has built a distinguished career overseeing fine-dining restaurants, hospitality groups, and 
+              has built a distinguished career overseeing fine-dining restaurants, elevated pubs, catering from boutique to corporate to large onsite events, hospitality groups, and 
               large-scale event venues across Toronto.
             </p>
             <div className="bio-stats">
@@ -127,19 +127,20 @@ const Home = () => {
               <h2 className="section-title">Culinary Vision & Expertise</h2>
               <div className="title-underline"></div>
               <p className="about-text">
-                Known for creative versatility, Chef Racine specializes in <strong>Middle Eastern, French, Italian, 
-                Asian fusion, and Mediterranean cuisines</strong>—crafting menus that balance authenticity, innovation, 
+                Known for creative versatility, Chef Racine specializes in <strong>French, Italian, 
+                Asian fusion, Mediterranean, and Middle Eastern cuisines</strong>—crafting menus that balance authenticity, innovation, 
                 and visual artistry.
               </p>
               <p className="about-text">
-                Recent work includes launching <strong>Muse Bistro-Bar</strong> at The Toot Hotel with The Fifteen Group, 
+                Recent work includes launching <strong>Muse Bistro-Bar</strong> at The Toor Hotel in coordination with The Fifteen Group, 
                 leading <strong>Grand Bizarre Supper Club and Event Centre</strong>, and serving as Corporate Executive 
                 Chef for the <strong>IL Fornello Restaurant Group</strong>, where he managed multi-unit operations and 
                 menu development.
               </p>
               <p className="about-text">
                 Beyond operational excellence, Chef Racine is a recognized media presence and culinary ambassador. 
-                Celebrated by <strong>The Globe and Mail, Toronto Star, and Toronto Life</strong> for his imaginative 
+                Celebrated by <strong>The Globe and Mail, Toronto Star, Toronto Life, Post City Magazine, 
+                Breakfast Television, and Rogers Morning Show</strong> for his imaginative 
                 presentations and refined palate.
               </p>
               <Link to="/cv" className="btn btn-outline">
@@ -190,6 +191,9 @@ const Home = () => {
               <span className="mention-badge">The Globe and Mail</span>
               <span className="mention-badge">Toronto Star</span>
               <span className="mention-badge">Toronto Life</span>
+              <span className="mention-badge">Post City Magazine</span>
+              <span className="mention-badge">Breakfast Television</span>
+              <span className="mention-badge">Rogers Morning Show</span>
             </div>
           </div>
         </div>
