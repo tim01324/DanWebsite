@@ -144,6 +144,64 @@ const CV = () => {
         </div>
       </section>
 
+      {/* Current Role Synopsis */}
+      <section className="responsibilities-section section-padding">
+        <div className="container">
+          <div className="section-header">
+            <FaUserTie className="section-icon" />
+            <h2 className="section-title">Current Role Synopsis</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="responsibilities-container">
+            <div className="responsibility-category">
+              <h3>Line Leadership & Operations</h3>
+              <ul>
+                <li>Conduct pre-service line checks (taste, plating, mise en place).</li>
+                <li>Maintain recipe standards, portion control, and quality consistency.</li>
+                <li>Manage ticket flow, work the line or call the board when required.</li>
+              </ul>
+            </div>
+
+            <div className="responsibility-category">
+              <h3>Team Leadership & Training</h3>
+              <ul>
+                <li>Mentor cooks directly on the line.</li>
+                <li>Train and reinforce techniques, recipes, and plating standards.</li>
+                <li>Build a strong, disciplined, and motivated kitchen culture.</li>
+              </ul>
+            </div>
+
+            <div className="responsibility-category">
+              <h3>Catering Leadership</h3>
+              <ul>
+                <li>Plan and execute in-house and off-site catering events.</li>
+                <li>Lead the team in preparing, packing, and delivering catering menus at the highest standard.</li>
+                <li>Oversee staffing, logistics, and quality control for catering operations.</li>
+              </ul>
+            </div>
+
+            <div className="responsibility-category">
+              <h3>Administration</h3>
+              <ul>
+                <li>Provide input on weekly scheduling and staffing.</li>
+                <li>Order and track product needs, manage inventory par levels.</li>
+                <li>Implement new menu items with training and plating guides.</li>
+                <li>Relay kitchen updates (staffing, supply issues, equipment needs) to leadership.</li>
+              </ul>
+            </div>
+
+            <div className="responsibility-category">
+              <h3>Accountability</h3>
+              <ul>
+                <li>Ensure food safety, sanitation, and organizational standards are met daily.</li>
+                <li>Maintain labor and prep efficiency aligned with sales.</li>
+                <li>Identify and escalate challenges early with proposed solutions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Education */}
       <section className="education-section section-padding">
         <div className="container">
