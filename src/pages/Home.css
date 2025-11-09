@@ -1,3 +1,40 @@
+/* Scroll Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 为偏好减少动画的用户禁用动画 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* 为不同元素添加延迟效果 */
+.specialty-card.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.specialty-card.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.specialty-card.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+
+.achievement-card.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.achievement-card.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.achievement-card.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+
+.cuisine-card.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.cuisine-card.animate-on-scroll:nth-child(2) { transition-delay: 0.15s; }
+.cuisine-card.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.cuisine-card.animate-on-scroll:nth-child(4) { transition-delay: 0.25s; }
+.cuisine-card.animate-on-scroll:nth-child(5) { transition-delay: 0.3s; }
+
 /* Hero Section */
 .hero {
   position: relative;

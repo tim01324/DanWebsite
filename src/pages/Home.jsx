@@ -1,11 +1,49 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { FaUtensils, FaAward, FaStar, FaArrowRight, FaTv, FaBook, FaHeart } from 'react-icons/fa'
 import './Home.css'
 
 const Home = () => {
+  const observerRef = useRef(null)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    // 添加小延迟确保 DOM 完全渲染
+    const timer = setTimeout(() => {
+      // 设置 Intersection Observer 来检测元素进入视口
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in')
+              // 触发后停止观察该元素，避免重复触发
+              observerRef.current.unobserve(entry.target)
+            }
+          })
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -100px 0px'
+        }
+      )
+
+      // 观察所有需要动画的元素
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach((el) => {
+        if (observerRef.current) {
+          observerRef.current.observe(el)
+        }
+      })
+    }, 100)
+
+    // 清理函数
+    return () => {
+      clearTimeout(timer)
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
   }, [])
 
   const specialties = [
@@ -46,7 +84,7 @@ const Home = () => {
       {/* Bio Highlight Section */}
       <section className="bio-highlight section-padding">
         <div className="container">
-          <div className="bio-card">
+          <div className="bio-card animate-on-scroll">
             <div className="bio-badge">
               <FaAward />
               <span>Red Seal Certified</span>
@@ -79,13 +117,13 @@ const Home = () => {
       <section className="about-section section-padding">
         <div className="container">
           <div className="about-grid">
-            <div className="about-image">
+            <div className="about-image animate-on-scroll">
               <img src="/images/chef/profile.jpg" alt="Chef Daniel Racine" className="chef-profile-photo" />
               <div className="image-overlay-badge">
                 <span>Red Seal Certified</span>
               </div>
             </div>
-            <div className="about-content">
+            <div className="about-content animate-on-scroll">
               <h2 className="section-title">Culinary Vision & Expertise</h2>
               <div className="title-underline"></div>
               <p className="about-text">
@@ -115,11 +153,11 @@ const Home = () => {
       {/* Specialties Section */}
       <section className="specialties-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center">Professional Excellence</h2>
+          <h2 className="section-title text-center animate-on-scroll">Professional Excellence</h2>
           <div className="title-underline center"></div>
           <div className="specialties-grid">
             {specialties.map((specialty, index) => (
-              <div key={index} className="specialty-card">
+              <div key={index} className="specialty-card animate-on-scroll">
                 <div className="specialty-icon">{specialty.icon}</div>
                 <h3>{specialty.title}</h3>
                 <p>{specialty.description}</p>
@@ -132,21 +170,21 @@ const Home = () => {
       {/* Media & Recognition Section */}
       <section className="achievements-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center">Media & Community Impact</h2>
+          <h2 className="section-title text-center animate-on-scroll">Media & Community Impact</h2>
           <div className="title-underline center"></div>
-          <p className="section-intro">
+          <p className="section-intro animate-on-scroll">
             Combining culinary artistry with community engagement and media presence
           </p>
           <div className="achievements-grid">
             {achievements.map((achievement, index) => (
-              <div key={index} className="achievement-card">
+              <div key={index} className="achievement-card animate-on-scroll">
                 <div className="achievement-icon">{achievement.icon}</div>
                 <h3>{achievement.title}</h3>
                 <p>{achievement.description}</p>
               </div>
             ))}
           </div>
-          <div className="media-mentions">
+          <div className="media-mentions animate-on-scroll">
             <p className="mentions-label">Featured In:</p>
             <div className="mentions-list">
               <span className="mention-badge">The Globe and Mail</span>
@@ -160,13 +198,13 @@ const Home = () => {
       {/* Featured Cuisines */}
       <section className="cuisines-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center">Culinary Specialties</h2>
+          <h2 className="section-title text-center animate-on-scroll">Culinary Specialties</h2>
           <div className="title-underline center"></div>
-          <p className="section-intro">
+          <p className="section-intro animate-on-scroll">
             Mastery across diverse culinary traditions, balancing authenticity with innovation
           </p>
           <div className="cuisines-grid-five">
-            <div className="cuisine-card">
+            <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>Middle Eastern</span>
@@ -175,7 +213,7 @@ const Home = () => {
               <h3>Middle Eastern</h3>
               <p>Rich flavors and aromatic spice profiles</p>
             </div>
-            <div className="cuisine-card">
+            <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>French</span>
@@ -184,7 +222,7 @@ const Home = () => {
               <h3>French</h3>
               <p>Classical techniques and refined presentation</p>
             </div>
-            <div className="cuisine-card">
+            <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>Italian</span>
@@ -193,7 +231,7 @@ const Home = () => {
               <h3>Italian</h3>
               <p>Authentic traditions with modern flair</p>
             </div>
-            <div className="cuisine-card">
+            <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>Asian Fusion</span>
@@ -202,7 +240,7 @@ const Home = () => {
               <h3>Asian Fusion</h3>
               <p>Contemporary interpretations of classic dishes</p>
             </div>
-            <div className="cuisine-card">
+            <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
                 <div className="image-placeholder">
                   <span>Mediterranean</span>
@@ -217,7 +255,7 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="cta-section">
-        <div className="container">
+        <div className="container animate-on-scroll">
           <h2>Let's Create Something Extraordinary</h2>
           <p>Available for culinary consulting, menu development, event direction, and executive chef positions.</p>
           <Link to="/contact" className="btn btn-light">

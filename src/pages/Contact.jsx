@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaUser, FaComment } from 'react-icons/fa'
 import './Contact.css'
 
@@ -12,9 +12,46 @@ const Contact = () => {
   })
 
   const [formStatus, setFormStatus] = useState('')
+  const observerRef = useRef(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    // 添加小延迟确保 DOM 完全渲染
+    const timer = setTimeout(() => {
+      // 设置 Intersection Observer 来检测元素进入视口
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in')
+              // 触发后停止观察该元素，避免重复触发
+              observerRef.current.unobserve(entry.target)
+            }
+          })
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -100px 0px'
+        }
+      )
+
+      // 观察所有需要动画的元素
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach((el) => {
+        if (observerRef.current) {
+          observerRef.current.observe(el)
+        }
+      })
+    }, 100)
+
+    // 清理函数
+    return () => {
+      clearTimeout(timer)
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
   }, [])
 
   const handleChange = (e) => {
@@ -73,7 +110,7 @@ const Contact = () => {
         <div className="container">
           <div className="contact-grid">
             {/* Contact Info */}
-            <div className="contact-info-section">
+            <div className="contact-info-section animate-on-scroll">
               <h2>Contact Information</h2>
               <p className="info-description">
                 Available for culinary consulting, menu development, event direction, and executive chef positions. 
@@ -112,7 +149,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="contact-form-section">
+            <div className="contact-form-section animate-on-scroll">
               <div className="form-container">
                 <h2>Send a Message</h2>
                 <form onSubmit={handleSubmit} className="contact-form">
@@ -208,7 +245,7 @@ const Contact = () => {
 
       {/* Map Section (Placeholder) */}
       <section className="map-section">
-        <div className="map-placeholder">
+        <div className="map-placeholder animate-on-scroll">
           <FaMapMarkerAlt className="map-icon" />
           <h3>Toronto, Canada</h3>
           <p>Serving Toronto's finest establishments and hospitality groups</p>

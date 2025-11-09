@@ -1,3 +1,29 @@
+/* Scroll Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 为偏好减少动画的用户禁用动画 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* 为不同元素添加延迟效果 */
+.contact-info-section.animate-on-scroll { transition-delay: 0.1s; }
+.contact-form-section.animate-on-scroll { transition-delay: 0.2s; }
+
 .contact-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   padding: 120px 20px 80px;

@@ -1,10 +1,48 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaBriefcase, FaGraduationCap, FaAward, FaStar, FaUserTie, FaDownload, FaFilePdf } from 'react-icons/fa'
 import './CV.css'
 
 const CV = () => {
+  const observerRef = useRef(null)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    // 添加小延迟确保 DOM 完全渲染
+    const timer = setTimeout(() => {
+      // 设置 Intersection Observer 来检测元素进入视口
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in')
+              // 触发后停止观察该元素，避免重复触发
+              observerRef.current.unobserve(entry.target)
+            }
+          })
+        },
+        {
+          threshold: 0.15, // 当元素15%可见时触发
+          rootMargin: '0px 0px -100px 0px' // 元素需要进入视口100px后才触发
+        }
+      )
+
+      // 观察所有需要动画的元素
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach((el) => {
+        if (observerRef.current) {
+          observerRef.current.observe(el)
+        }
+      })
+    }, 100)
+
+    // 清理函数
+    return () => {
+      clearTimeout(timer)
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
   }, [])
 
   const education = [
@@ -97,7 +135,7 @@ const CV = () => {
       {/* Profile Summary */}
       <section className="profile-section section-padding">
         <div className="container">
-          <div className="profile-card">
+          <div className="profile-card animate-on-scroll">
             <div className="profile-icon">
               <FaUserTie />
             </div>
@@ -123,14 +161,14 @@ const CV = () => {
       {/* Experience */}
       <section className="experience-section section-padding">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <FaBriefcase className="section-icon" />
             <h2 className="section-title">Professional Experience</h2>
             <div className="title-underline"></div>
           </div>
           <div className="timeline">
             {experience.map((job, index) => (
-              <div key={index} className="timeline-item">
+              <div key={index} className="timeline-item animate-on-scroll">
                 <div className="timeline-marker"></div>
                 <div className="timeline-content">
                   <div className="timeline-period">{job.period}</div>
@@ -147,13 +185,13 @@ const CV = () => {
       {/* Current Role Synopsis */}
       <section className="responsibilities-section section-padding">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <FaUserTie className="section-icon" />
             <h2 className="section-title">Current Role Synopsis</h2>
             <div className="title-underline"></div>
           </div>
           <div className="responsibilities-container">
-            <div className="responsibility-category">
+            <div className="responsibility-category animate-on-scroll">
               <h3>Line Leadership & Operations</h3>
               <ul>
                 <li>Conduct pre-service line checks (taste, plating, mise en place).</li>
@@ -162,7 +200,7 @@ const CV = () => {
               </ul>
             </div>
 
-            <div className="responsibility-category">
+            <div className="responsibility-category animate-on-scroll">
               <h3>Team Leadership & Training</h3>
               <ul>
                 <li>Mentor cooks directly on the line.</li>
@@ -171,7 +209,7 @@ const CV = () => {
               </ul>
             </div>
 
-            <div className="responsibility-category">
+            <div className="responsibility-category animate-on-scroll">
               <h3>Catering Leadership</h3>
               <ul>
                 <li>Plan and execute in-house and off-site catering events.</li>
@@ -180,7 +218,7 @@ const CV = () => {
               </ul>
             </div>
 
-            <div className="responsibility-category">
+            <div className="responsibility-category animate-on-scroll">
               <h3>Administration</h3>
               <ul>
                 <li>Provide input on weekly scheduling and staffing.</li>
@@ -190,7 +228,7 @@ const CV = () => {
               </ul>
             </div>
 
-            <div className="responsibility-category">
+            <div className="responsibility-category animate-on-scroll">
               <h3>Accountability</h3>
               <ul>
                 <li>Ensure food safety, sanitation, and organizational standards are met daily.</li>
@@ -205,14 +243,14 @@ const CV = () => {
       {/* Education */}
       <section className="education-section section-padding">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <FaGraduationCap className="section-icon" />
             <h2 className="section-title">Education</h2>
             <div className="title-underline"></div>
           </div>
           <div className="education-grid">
             {education.map((edu, index) => (
-              <div key={index} className="education-card">
+              <div key={index} className="education-card animate-on-scroll">
                 <div className="edu-icon">
                   <FaGraduationCap />
                 </div>
@@ -228,14 +266,14 @@ const CV = () => {
       {/* Skills */}
       <section className="skills-section section-padding">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <FaStar className="section-icon" />
             <h2 className="section-title">Professional Skills</h2>
             <div className="title-underline"></div>
           </div>
           <div className="skills-grid">
             {skills.map((skill, index) => (
-              <div key={index} className="skill-item">
+              <div key={index} className="skill-item animate-on-scroll">
                 <div className="skill-header">
                   <span className="skill-name">{skill.name}</span>
                   <span className="skill-percentage">{skill.level}%</span>
@@ -255,14 +293,14 @@ const CV = () => {
       {/* Specialties */}
       <section className="specialties-section section-padding">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <FaAward className="section-icon" />
             <h2 className="section-title">Culinary Specialties</h2>
             <div className="title-underline"></div>
           </div>
           <div className="specialties-grid">
             {specialties.map((specialty, index) => (
-              <div key={index} className="specialty-tag">
+              <div key={index} className="specialty-tag animate-on-scroll">
                 <FaStar className="tag-icon" />
                 <span>{specialty}</span>
               </div>
@@ -276,7 +314,7 @@ const CV = () => {
         <div className="container">
           <h2 className="section-title text-center">References</h2>
           <div className="title-underline center"></div>
-          <div className="references-content">
+          <div className="references-content animate-on-scroll">
             <p>
               Professional references and testimonials are available upon request. 
               I have worked with leading hospitality groups, restaurant owners, and event organizers throughout Toronto, 
