@@ -66,7 +66,7 @@ const Home = () => {
         <div className="hero-content">
           <p className="hero-subtitle-top fade-in">Red Seal Certified Executive Chef</p>
           <h1 className="hero-title fade-in">Chef Daniel Racine</h1>
-          <p className="hero-subtitle fade-in">Culinary Leadership & Innovation Across Toronto's Finest Establishments</p>
+          <p className="hero-subtitle fade-in">Culinary Leadership & Innovation Across some of Toronto's Finest Establishments</p>
           <div className="hero-buttons fade-in">
             <Link to="/gallery" className="btn btn-primary">
               View Gallery <FaArrowRight />

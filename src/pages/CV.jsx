@@ -141,7 +141,7 @@ const CV = () => {
             </div>
             <h2>Professional Summary</h2>
             <p>
-              A Red Seal certified Executive Chef with over two decades of culinary leadership, Daniel Racine has 
+              A Red Seal certified Executive Chef with over two decades of culinary leadership, Chef Racine has 
               built a distinguished career overseeing fine-dining restaurants, elevated pubs, catering from boutique to corporate to large onsite events, hospitality groups, and large-scale 
               event venues across Toronto. Known for his creative versatility, Chef Racine specializes in 
               French, Italian, Asian fusion, Mediterranean, and Middle Eastern cuisines—crafting menus that balance authenticity, 
