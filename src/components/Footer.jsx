@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer-content container">
         <div className="footer-section">
           <h3>Chef Daniel Racine</h3>
-          <p>Red Seal–certified Executive Chef with over two decades of culinary leadership across fine-dining restaurants and hospitality groups.</p>
+          <p>Red Seal–certified Executive Chef with over two decades of culinary leadership across fine-dining restaurants, elevaterd pub and catering/banquet venues.</p>
         </div>
 
         <div className="footer-section">
