@@ -210,48 +210,38 @@ const Home = () => {
           <div className="cuisines-grid-five">
             <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
-                <div className="image-placeholder">
-                  <span>Middle Eastern</span>
-                </div>
-              </div>
-              <h3>Middle Eastern</h3>
-              <p>Rich flavors and aromatic spice profiles</p>
-            </div>
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <div className="image-placeholder">
-                  <span>French</span>
-                </div>
+                <img src="/images/gallery/Sous Vide Duck Breast Black Cherry Jus Cacio e Pepe.jpg" alt="French Cuisine" />
               </div>
               <h3>French</h3>
               <p>Classical techniques and refined presentation</p>
             </div>
             <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
-                <div className="image-placeholder">
-                  <span>Italian</span>
-                </div>
+                <img src="/images/gallery/Cacio Pepe.jpg" alt="Italian Cuisine" />
               </div>
               <h3>Italian</h3>
               <p>Authentic traditions with modern flair</p>
             </div>
             <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
-                <div className="image-placeholder">
-                  <span>Asian Fusion</span>
-                </div>
+                <img src="/images/gallery/Asian Salad with Pickled Ginger and Fried Rice Noodles.jpg" alt="Asian Fusion Cuisine" />
               </div>
               <h3>Asian Fusion</h3>
               <p>Contemporary interpretations of classic dishes</p>
             </div>
             <div className="cuisine-card animate-on-scroll">
               <div className="cuisine-image">
-                <div className="image-placeholder">
-                  <span>Mediterranean</span>
-                </div>
+                <img src="/images/gallery/Mediterranean Bass with Zucchini Flowers.jpg" alt="Mediterranean Cuisine" />
               </div>
               <h3>Mediterranean</h3>
               <p>Fresh, vibrant coastal flavors</p>
+            </div>
+            <div className="cuisine-card animate-on-scroll">
+              <div className="cuisine-image">
+                <img src="/images/gallery/Butter Chicken Risotto Croquettes Cardamom Yogurt Spiced Plum Chutney Parmigiano-Reggiano.jpg" alt="Middle Eastern Cuisine" />
+              </div>
+              <h3>Middle Eastern</h3>
+              <p>Rich flavors and aromatic spice profiles</p>
             </div>
           </div>
         </div>

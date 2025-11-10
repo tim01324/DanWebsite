@@ -107,7 +107,7 @@ const Gallery = () => {
     // Bruschetta & Appetizers
     { id: 110, category: 'appetizers', title: 'Fig, Gorgonzola & Prosciutto Bruschetta', image: '/images/gallery/Fig, Gorgonzola, Prosciutto, Walnut and Wild Honey Bruschetta.jpg', description: 'Sweet and savory combination' },
     { id: 111, category: 'appetizers', title: 'Port Poached Pear Brulée', image: '/images/gallery/Port Poached Pear, Gorgonzola and Toasted Walnut Brulee.jpg', description: 'Elegant fruit and cheese' },
-    { id: 112, category: 'appetizers', title: 'Brulée Chèvre Pinwheel', image: '/images/gallery/Brule Chevre Demerara Thyme Infused PinwheelLavender Honey Mascarpone Crema Black Mission Fresh Fig Candied Pistachio Dust.jpg', description: 'Complex cheese preparation' },
+    { id: 112, category: 'appetizers', title: 'Brulée Chèvre Pinwheel', image: '/images/gallery/Tuna Tartare with Caviar Crown and Quails egg.jpg', description: 'Complex cheese preparation' },
     { id: 113, category: 'appetizers', title: 'Lobster Bisque', image: '/images/gallery/Lobster Bisque.jpg', description: 'Rich seafood soup' },
     { id: 114, category: 'appetizers', title: 'Tuna Bomb', image: '/images/gallery/Tuna Bomb on a Potato Croquette.jpg', description: 'Dramatic tuna presentation' },
     { id: 115, category: 'appetizers', title: 'Scallop with Duo of Caviar', image: '/images/gallery/Seared Scallop with a Duo of Caviar on the Half Shell.jpg', description: 'Luxurious scallop preparation' },
