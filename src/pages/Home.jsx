@@ -1,49 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaUtensils, FaAward, FaStar, FaArrowRight, FaTv, FaBook, FaHeart } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 import './Home.css'
 
 const Home = () => {
-  const observerRef = useRef(null)
-
   useEffect(() => {
     window.scrollTo(0, 0)
-
-    // 添加小延迟确保 DOM 完全渲染
-    const timer = setTimeout(() => {
-      // 设置 Intersection Observer 来检测元素进入视口
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-in')
-              // 触发后停止观察该元素，避免重复触发
-              observerRef.current.unobserve(entry.target)
-            }
-          })
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '0px 0px -80px 0px'
-        }
-      )
-
-      // 观察所有需要动画的元素
-      const animatedElements = document.querySelectorAll('.animate-on-scroll')
-      animatedElements.forEach((el) => {
-        if (observerRef.current) {
-          observerRef.current.observe(el)
-        }
-      })
-    }, 100)
-
-    // 清理函数
-    return () => {
-      clearTimeout(timer)
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
-    }
   }, [])
 
   const specialties = [
@@ -58,33 +21,98 @@ const Home = () => {
     { icon: <FaHeart />, title: 'Community Impact', description: 'Charity work with Daily Bread Food Bank' }
   ]
 
+  // Animation Variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  }
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const scaleOnHover = {
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
+      transition: { duration: 0.3 }
+    }
+  }
+
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <p className="hero-subtitle-top fade-in">Red Seal Certified Executive Chef</p>
-          <h1 className="hero-title fade-in">Chef Daniel Racine</h1>
-          <p className="hero-subtitle fade-in">Culinary Leadership & Innovation Across some of Toronto's Finest Establishments</p>
-          <div className="hero-buttons fade-in">
+          <motion.p 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="hero-subtitle-top"
+          >
+            Red Seal Certified Executive Chef
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="hero-title"
+          >
+            Chef Daniel Racine
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="hero-subtitle"
+          >
+            Culinary Leadership & Innovation Across some of Toronto's Finest Establishments
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="hero-buttons"
+          >
             <Link to="/gallery" className="btn btn-primary">
               View Gallery <FaArrowRight />
             </Link>
             <Link to="/contact" className="btn btn-secondary">
               Get in Touch
             </Link>
-          </div>
+          </motion.div>
         </div>
-        <div className="scroll-indicator">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="scroll-indicator"
+        >
           <span></span>
-        </div>
+        </motion.div>
       </section>
 
       {/* Bio Highlight Section */}
       <section className="bio-highlight section-padding">
         <div className="container">
-          <div className="bio-card animate-on-scroll">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="bio-card"
+          >
             <div className="bio-badge">
               <FaAward />
               <span>Red Seal Certified</span>
@@ -109,7 +137,7 @@ const Home = () => {
                 <span className="stat-label">Media Projects</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -117,13 +145,25 @@ const Home = () => {
       <section className="about-section section-padding">
         <div className="container">
           <div className="about-grid">
-            <div className="about-image animate-on-scroll">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="about-image"
+            >
               <img src="/images/chef/profile.jpg" alt="Chef Daniel Racine" className="chef-profile-photo" />
               <div className="image-overlay-badge">
                 <span>Red Seal Certified</span>
               </div>
-            </div>
-            <div className="about-content animate-on-scroll">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="about-content"
+            >
               <h2 className="section-title">Culinary Vision & Expertise</h2>
               <div className="title-underline"></div>
               <p className="about-text">
@@ -146,7 +186,7 @@ const Home = () => {
               <Link to="/cv" className="btn btn-outline">
                 View Full CV <FaArrowRight />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -154,108 +194,172 @@ const Home = () => {
       {/* Specialties Section */}
       <section className="specialties-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center animate-on-scroll">Professional Excellence</h2>
-          <div className="title-underline center"></div>
-          <div className="specialties-grid">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title text-center">Professional Excellence</h2>
+            <div className="title-underline center"></div>
+          </motion.div>
+          
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="specialties-grid"
+          >
             {specialties.map((specialty, index) => (
-              <div key={index} className="specialty-card animate-on-scroll">
-                <div className="specialty-icon">{specialty.icon}</div>
-                <h3>{specialty.title}</h3>
-                <p>{specialty.description}</p>
-              </div>
+              <motion.div 
+                key={index} 
+                variants={fadeInUp}
+                whileHover="hover"
+                className="specialty-card"
+              >
+                <motion.div 
+                  variants={scaleOnHover}
+                  className="specialty-card-inner"
+                >
+                  <div className="specialty-icon">{specialty.icon}</div>
+                  <h3>{specialty.title}</h3>
+                  <p>{specialty.description}</p>
+                </motion.div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Media & Recognition Section */}
       <section className="achievements-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center animate-on-scroll">Media & Community Impact</h2>
-          <div className="title-underline center"></div>
-          <p className="section-intro animate-on-scroll">
-            Combining culinary artistry with community engagement and media presence
-          </p>
-          <div className="achievements-grid">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title text-center">Media & Community Impact</h2>
+            <div className="title-underline center"></div>
+            <p className="section-intro">
+              Combining culinary artistry with community engagement and media presence
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="achievements-grid"
+          >
             {achievements.map((achievement, index) => (
-              <div key={index} className="achievement-card animate-on-scroll">
+              <motion.div 
+                key={index} 
+                variants={fadeInUp}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                className="achievement-card"
+              >
                 <div className="achievement-icon">{achievement.icon}</div>
                 <h3>{achievement.title}</h3>
                 <p>{achievement.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-          <div className="media-mentions animate-on-scroll">
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="media-mentions"
+          >
             <p className="mentions-label">Featured In:</p>
             <div className="mentions-list">
-              <span className="mention-badge">The Globe and Mail</span>
-              <span className="mention-badge">Toronto Star</span>
-              <span className="mention-badge">Toronto Life</span>
-              <span className="mention-badge">Post City Magazine</span>
-              <span className="mention-badge">Breakfast Television</span>
-              <span className="mention-badge">Rogers Morning Show</span>
+              {['The Globe and Mail', 'Toronto Star', 'Toronto Life', 'Post City Magazine', 'Breakfast Television', 'Rogers Morning Show'].map((media, index) => (
+                <motion.span 
+                  key={index}
+                  whileHover={{ scale: 1.1, color: 'var(--secondary-color)' }}
+                  className="mention-badge"
+                >
+                  {media}
+                </motion.span>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Cuisines */}
       <section className="cuisines-section section-padding">
         <div className="container">
-          <h2 className="section-title text-center animate-on-scroll">Culinary Specialties</h2>
-          <div className="title-underline center"></div>
-          <p className="section-intro animate-on-scroll">
-            Mastery across diverse culinary traditions, balancing authenticity with innovation
-          </p>
-          <div className="cuisines-grid-five">
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <img src="/images/gallery/Sous Vide Duck Breast Black Cherry Jus Cacio e Pepe.jpg" alt="French Cuisine" />
-              </div>
-              <h3>French</h3>
-              <p>Classical techniques and refined presentation</p>
-            </div>
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <img src="/images/gallery/Cacio Pepe.jpg" alt="Italian Cuisine" />
-              </div>
-              <h3>Italian</h3>
-              <p>Authentic traditions with modern flair</p>
-            </div>
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <img src="/images/gallery/Asian Salad with Pickled Ginger and Fried Rice Noodles.jpg" alt="Asian Fusion Cuisine" />
-              </div>
-              <h3>Asian Fusion</h3>
-              <p>Contemporary interpretations of classic dishes</p>
-            </div>
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <img src="/images/gallery/Mediterranean Bass with Zucchini Flowers.jpg" alt="Mediterranean Cuisine" />
-              </div>
-              <h3>Mediterranean</h3>
-              <p>Fresh, vibrant coastal flavors</p>
-            </div>
-            <div className="cuisine-card animate-on-scroll">
-              <div className="cuisine-image">
-                <img src="/images/gallery/Butter Chicken Risotto Croquettes Cardamom Yogurt Spiced Plum Chutney Parmigiano-Reggiano.jpg" alt="Middle Eastern Cuisine" />
-              </div>
-              <h3>Middle Eastern</h3>
-              <p>Rich flavors and aromatic spice profiles</p>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title text-center">Culinary Specialties</h2>
+            <div className="title-underline center"></div>
+            <p className="section-intro">
+              Mastery across diverse culinary traditions, balancing authenticity with innovation
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="cuisines-grid-five"
+          >
+            {[
+              { img: "/images/gallery/Sous Vide Duck Breast Black Cherry Jus Cacio e Pepe.jpg", title: "French", desc: "Classical techniques and refined presentation" },
+              { img: "/images/gallery/Cacio Pepe.jpg", title: "Italian", desc: "Authentic traditions with modern flair" },
+              { img: "/images/gallery/Asian Salad with Pickled Ginger and Fried Rice Noodles.jpg", title: "Asian Fusion", desc: "Contemporary interpretations of classic dishes" },
+              { img: "/images/gallery/Mediterranean Bass with Zucchini Flowers.jpg", title: "Mediterranean", desc: "Fresh, vibrant coastal flavors" },
+              { img: "/images/gallery/Butter Chicken Risotto Croquettes Cardamom Yogurt Spiced Plum Chutney Parmigiano-Reggiano.jpg", title: "Middle Eastern", desc: "Rich flavors and aromatic spice profiles" }
+            ].map((cuisine, index) => (
+              <motion.div 
+                key={index} 
+                variants={fadeInUp}
+                whileHover={{ y: -10 }}
+                className="cuisine-card"
+              >
+                <div className="cuisine-image">
+                  <img src={cuisine.img} alt={`${cuisine.title} Cuisine`} />
+                </div>
+                <h3>{cuisine.title}</h3>
+                <p>{cuisine.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="cta-section">
-        <div className="container animate-on-scroll">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="container"
+        >
           <h2>Let's Create Something Extraordinary</h2>
           <p>Available for culinary consulting, menu development, event direction, and executive chef positions.</p>
-          <Link to="/contact" className="btn btn-light">
-            Get in Touch
+          <Link to="/contact">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-light"
+            >
+              Get in Touch
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </section>
     </div>
   )
