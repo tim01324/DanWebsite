@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaUtensils, FaFish, FaDrumstickBite, FaLeaf, FaPizzaSlice } from 'react-icons/fa'
+import SEO from '../components/SEO'
 import './Gallery.css'
 
 const Gallery = () => {
@@ -27,7 +28,7 @@ const Gallery = () => {
     { id: 4, category: 'appetizers', title: 'Butter Chicken Risotto Croquettes', image: '/images/gallery/Butter Chicken Risotto Croquettes Cardamom Yogurt Spiced Plum Chutney Parmigiano-Reggiano.jpg', description: 'Fusion croquettes with spiced chutney' },
     { id: 5, category: 'appetizers', title: 'Twice Baked Baby Potatoes with Caviar', image: '/images/gallery/Twice Baked Baby Potatoes Caviar.jpg', description: 'Luxurious potato appetizer' },
     { id: 6, category: 'appetizers', title: 'Mexican Fusion Bao Bun', image: '/images/gallery/Mexican Fusion Bao Bun.png', description: 'Creative fusion appetizer' },
-    
+
     // Seafood Main Courses
     { id: 10, category: 'seafood', title: 'Seared Scallops with Prosciutto', image: '/images/gallery/Seared Scallops with Prosciutto Chips and Port Demi.jpg', description: 'Pan-seared scallops with crispy prosciutto' },
     { id: 11, category: 'seafood', title: 'Seared Scallop with Cauliflower Velouté', image: '/images/gallery/Seared Scallop with Cauliflower Veloute.jpg', description: 'Scallop with creamy cauliflower' },
@@ -49,7 +50,7 @@ const Gallery = () => {
     { id: 27, category: 'seafood', title: 'Steamed Mussels', image: '/images/gallery/Steamed Mussels Spicy Tomato.jpg', description: 'Mussels in spicy tomato broth' },
     { id: 28, category: 'seafood', title: 'Shrimp Saganaki', image: '/images/gallery/Shrimp Saganaki.jpg', description: 'Greek-style shrimp' },
     { id: 29, category: 'seafood', title: 'Frilled Calamari', image: '/images/gallery/Frilled Calamari Over Raddichio Salad.jpg', description: 'Crispy calamari on bitter greens' },
-    
+
     // Meat Main Courses
     { id: 40, category: 'meat', title: 'Beef on Beef', image: '/images/gallery/Beef on Beef.jpg', description: 'Luxurious beef preparation' },
     { id: 41, category: 'meat', title: 'Ontario Rack of Lamb', image: '/images/gallery/Ontario Rack of Lamb with a Fig Demi.jpg', description: 'Local lamb with fig reduction' },
@@ -63,7 +64,7 @@ const Gallery = () => {
     { id: 49, category: 'meat', title: 'Smoke and Grilled Baby Back Ribs', image: '/images/gallery/Smoke and Grilled Baby Back Ribs.jpg', description: 'Tender BBQ ribs' },
     { id: 50, category: 'meat', title: 'Roasted Elk Tenderloin', image: '/images/gallery/Roasted Elk Tenderloin Red Wine Jus.jpg', description: 'Wild game with red wine' },
     { id: 51, category: 'meat', title: 'Venison Tenderloin', image: '/images/gallery/Venison Tenderloin, Roasted Roots vegetables and Toasted Pistachio.jpg', description: 'Venison with root vegetables' },
-    
+
     // Pasta & Risotto
     { id: 60, category: 'pasta', title: 'Fettuccine Alfredo with Truffles', image: '/images/gallery/fettucine Alfredo with Autumn Truffles.jpg', description: 'Classic pasta with fresh truffles' },
     { id: 61, category: 'pasta', title: 'Cacio e Pepe', image: '/images/gallery/Cacio Pepe.jpg', description: 'Roman cheese and pepper pasta' },
@@ -76,7 +77,7 @@ const Gallery = () => {
     { id: 68, category: 'pasta', title: 'Lobster Zucchini Risotto', image: '/images/gallery/Lobster, Zucchini Risotto Saffron Cream.jpg', description: 'Luxurious seafood risotto' },
     { id: 69, category: 'pasta', title: 'Seafood Risotto', image: '/images/gallery/Seafood Risotto Appetizer.jpg', description: 'Mixed seafood risotto' },
     { id: 70, category: 'pasta', title: 'Foraged Mushroom Pizza', image: '/images/gallery/Foraged Mushroom Pizza.jpg', description: 'Artisan wild mushroom pizza' },
-    
+
     // Salads & Raw Preparations
     { id: 80, category: 'salads', title: 'Tuna Tartare with Caviar', image: '/images/gallery/Tuna Tartare with Caviar Crown and Quails egg.jpg', description: 'Luxurious raw tuna' },
     { id: 81, category: 'salads', title: 'Tuna Tartare with Crostini', image: '/images/gallery/Tuna Tartare with Crostini and Micro Salad.jpg', description: 'Fresh tuna with crispy bread' },
@@ -103,7 +104,7 @@ const Gallery = () => {
     { id: 102, category: 'salads', title: 'Radicchio Fiore di Latte', image: '/images/gallery/Radicchio Fiore di Latte Salad.jpg', description: 'Bitter greens with fresh cheese' },
     { id: 103, category: 'salads', title: 'Lobster & Avocado', image: '/images/gallery/Lobster, Avocado Salad with Gochujang Mayo.jpg', description: 'Fusion lobster salad' },
     { id: 104, category: 'salads', title: 'Avocado, Mango & King Crab', image: '/images/gallery/Avocado, Mango, King Crab and Poached Tiger Shrimp.jpg', description: 'Tropical seafood salad' },
-    
+
     // Bruschetta & Appetizers
     { id: 110, category: 'appetizers', title: 'Fig, Gorgonzola & Prosciutto Bruschetta', image: '/images/gallery/Fig, Gorgonzola, Prosciutto, Walnut and Wild Honey Bruschetta.jpg', description: 'Sweet and savory combination' },
     { id: 111, category: 'appetizers', title: 'Port Poached Pear Brulée', image: '/images/gallery/Port Poached Pear, Gorgonzola and Toasted Walnut Brulee.jpg', description: 'Elegant fruit and cheese' },
@@ -120,6 +121,11 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
+      <SEO
+        title="Culinary Gallery"
+        description="Explore Chef Daniel Racine's culinary portfolio featuring French, Italian, and Asian fusion dishes."
+        url="/gallery"
+      />
       {/* Hero Section */}
       <section className="gallery-hero">
         <div className="gallery-hero-content">

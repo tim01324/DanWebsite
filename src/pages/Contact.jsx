@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaUser, FaComment } from 'react-icons/fa'
+import SEO from '../components/SEO'
 import './Contact.css'
 
 const Contact = () => {
@@ -66,7 +67,7 @@ const Contact = () => {
     setFormStatus('success')
     // Here you would typically send the form data to a backend
     console.log('Form submitted:', formData)
-    
+
     // Reset form after submission
     setTimeout(() => {
       setFormData({
@@ -97,6 +98,11 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <SEO
+        title="Contact"
+        description="Get in touch with Chef Daniel Racine for culinary consulting, menu development, and event direction."
+        url="/contact"
+      />
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="contact-hero-content">
@@ -113,14 +119,14 @@ const Contact = () => {
             <div className="contact-info-section animate-on-scroll">
               <h2>Contact Information</h2>
               <p className="info-description">
-                Available for culinary consulting, menu development, event direction, and executive chef positions. 
+                Available for culinary consulting, menu development, event direction, and executive chef positions.
                 Let's discuss how we can work together.
               </p>
 
               <div className="contact-info-cards">
                 {contactInfo.map((info, index) => (
-                  <a 
-                    key={index} 
+                  <a
+                    key={index}
                     href={info.link}
                     className="contact-info-card"
                     target={info.title === 'Location' ? '_blank' : '_self'}
@@ -138,7 +144,7 @@ const Contact = () => {
               <div className="availability-card">
                 <h3>Professional Services</h3>
                 <p>
-                  Culinary Consulting • Menu Development • Restaurant Operations • 
+                  Culinary Consulting • Menu Development • Restaurant Operations •
                   Event Direction • Corporate Executive Chef Positions • Media & Brand Partnerships
                 </p>
                 <div className="availability-status">

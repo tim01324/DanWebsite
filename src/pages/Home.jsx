@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaUtensils, FaAward, FaStar, FaArrowRight, FaTv, FaBook, FaHeart } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import './Home.css'
 
 const Home = () => {
@@ -51,6 +52,10 @@ const Home = () => {
 
   return (
     <div className="home">
+      <SEO
+        title="Home"
+        description="Chef Daniel Racine - Red Seal Certified Executive Chef specializing in French, Italian, and Asian Fusion cuisine."
+      />
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
