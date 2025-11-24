@@ -23,11 +23,11 @@ const Home = () => {
 
   // Animation Variants
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
     }
   }
 
@@ -42,7 +42,7 @@ const Home = () => {
   }
 
   const scaleOnHover = {
-    hover: { 
+    hover: {
       scale: 1.05,
       boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
       transition: { duration: 0.3 }
@@ -55,7 +55,7 @@ const Home = () => {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -63,7 +63,7 @@ const Home = () => {
           >
             Red Seal Certified Executive Chef
           </motion.p>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -71,7 +71,7 @@ const Home = () => {
           >
             Chef Daniel Racine
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -79,7 +79,7 @@ const Home = () => {
           >
             Culinary Leadership & Innovation Across some of Toronto's Finest Establishments
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -93,7 +93,7 @@ const Home = () => {
             </Link>
           </motion.div>
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -106,7 +106,7 @@ const Home = () => {
       {/* Bio Highlight Section */}
       <section className="bio-highlight section-padding">
         <div className="container">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -119,8 +119,8 @@ const Home = () => {
             </div>
             <h2 className="bio-title">Executive Chef & Culinary Director</h2>
             <p className="bio-lead">
-              A Red Seal–certified Executive Chef with over two decades of culinary leadership, Daniel Racine 
-              has built a distinguished career overseeing fine-dining restaurants, elevated pubs, catering from boutique to corporate to large onsite events, hospitality groups, and 
+              A Red Seal–certified Executive Chef with over two decades of culinary leadership, Daniel Racine
+              has built a distinguished career overseeing fine-dining restaurants, elevated pubs, catering from boutique to corporate to large onsite events, hospitality groups, and
               large-scale event venues across Toronto.
             </p>
             <div className="bio-stats">
@@ -145,7 +145,7 @@ const Home = () => {
       <section className="about-section section-padding">
         <div className="container">
           <div className="about-grid">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -157,7 +157,7 @@ const Home = () => {
                 <span>Red Seal Certified</span>
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -167,25 +167,23 @@ const Home = () => {
               <h2 className="section-title">Culinary Vision & Expertise</h2>
               <div className="title-underline"></div>
               <p className="about-text">
-                Known for creative versatility, Chef Racine specializes in <strong>French, Italian, 
-                Asian fusion, Mediterranean, and Middle Eastern cuisines</strong>—crafting menus that balance authenticity, innovation, 
+                Known for creative versatility, Chef Racine specializes in <strong>French, Italian,
+                  Asian fusion, Mediterranean, and Middle Eastern cuisines</strong>—crafting menus that balance authenticity, innovation,
                 and visual artistry.
               </p>
               <p className="about-text">
-                Recent work includes launching <strong>Muse Bistro-Bar</strong> at The Toor Hotel in coordination with The Fifteen Group, 
-                leading <strong>Grand Bizarre Supper Club and Event Centre</strong>, and serving as Corporate Executive 
-                Chef for the <strong>IL Fornello Restaurant Group</strong>, where he managed multi-unit operations and 
+                Recent work includes launching <strong>Muse Bistro-Bar</strong> at The Toor Hotel in coordination with The Fifteen Group,
+                leading <strong>Grand Bizarre Supper Club and Event Centre</strong>, and serving as Corporate Executive
+                Chef for the <strong>IL Fornello Restaurant Group</strong>, where he managed multi-unit operations and
                 menu development.
               </p>
               <p className="about-text">
-                Beyond operational excellence, Chef Racine is a recognized media presence and culinary ambassador. 
-                Celebrated by <strong>The Globe and Mail, Toronto Star, Toronto Life, Post City Magazine, 
-                Breakfast Television, and Rogers Morning Show</strong> for his imaginative 
+                Beyond operational excellence, Chef Racine is a recognized media presence and culinary ambassador.
+                Celebrated by <strong>The Globe and Mail, Toronto Star, Toronto Life, Post City Magazine,
+                  Breakfast Television, and Rogers Morning Show</strong> for his imaginative
                 presentations and refined palate.
               </p>
-              <Link to="/cv" className="btn btn-outline">
-                View Full CV <FaArrowRight />
-              </Link>
+
             </motion.div>
           </div>
         </div>
@@ -203,8 +201,8 @@ const Home = () => {
             <h2 className="section-title text-center">Professional Excellence</h2>
             <div className="title-underline center"></div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -212,13 +210,13 @@ const Home = () => {
             className="specialties-grid"
           >
             {specialties.map((specialty, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 whileHover="hover"
                 className="specialty-card"
               >
-                <motion.div 
+                <motion.div
                   variants={scaleOnHover}
                   className="specialty-card-inner"
                 >
@@ -248,7 +246,7 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -256,8 +254,8 @@ const Home = () => {
             className="achievements-grid"
           >
             {achievements.map((achievement, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="achievement-card"
@@ -269,7 +267,7 @@ const Home = () => {
             ))}
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -279,7 +277,7 @@ const Home = () => {
             <p className="mentions-label">Featured In:</p>
             <div className="mentions-list">
               {['The Globe and Mail', 'Toronto Star', 'Toronto Life', 'Post City Magazine', 'Breakfast Television', 'Rogers Morning Show'].map((media, index) => (
-                <motion.span 
+                <motion.span
                   key={index}
                   whileHover={{ scale: 1.1, color: 'var(--secondary-color)' }}
                   className="mention-badge"
@@ -308,7 +306,7 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -322,8 +320,8 @@ const Home = () => {
               { img: "/images/gallery/Mediterranean Bass with Zucchini Flowers.jpg", title: "Mediterranean", desc: "Fresh, vibrant coastal flavors" },
               { img: "/images/gallery/Butter Chicken Risotto Croquettes Cardamom Yogurt Spiced Plum Chutney Parmigiano-Reggiano.jpg", title: "Middle Eastern", desc: "Rich flavors and aromatic spice profiles" }
             ].map((cuisine, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -10 }}
                 className="cuisine-card"
@@ -341,7 +339,7 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="cta-section">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -351,7 +349,7 @@ const Home = () => {
           <h2>Let's Create Something Extraordinary</h2>
           <p>Available for culinary consulting, menu development, event direction, and executive chef positions.</p>
           <Link to="/contact">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn btn-light"

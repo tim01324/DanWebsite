@@ -4,6 +4,7 @@
   "description": "A modern chef portfolio website",
   "private": true,
   "dependencies": {
+    "@studio-freight/react-lenis": "^0.0.47",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.24",
     "react": "^18.2.0",

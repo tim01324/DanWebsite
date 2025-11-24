@@ -41,7 +41,6 @@ const Navigation = () => {
 	const navItems = [
 		{ path: "/", label: "Home" },
 		{ path: "/gallery", label: "Gallery" },
-		{ path: "/cv", label: "CV & References" },
 		{ path: "/contact", label: "Contact" },
 	];
 
