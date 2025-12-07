@@ -295,6 +295,66 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Cookbook Section */}
+      <section className="cookbook-section section-padding">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title text-center">Published Work</h2>
+            <div className="title-underline center"></div>
+            <p className="section-intro">
+              A culinary journey captured in pages
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="cookbook-showcase"
+          >
+            <div className="cookbook-image-wrapper">
+              <img
+                src="/images/cookbook/GetAttachmentThumbnail.jpg"
+                alt="A Gift From The Stars - Celebrity Cookbook by Chef Daniel Racine"
+                className="cookbook-cover"
+              />
+              <div className="cookbook-badge">
+                <FaBook />
+                <span>Celebrity Cookbook</span>
+              </div>
+            </div>
+            <div className="cookbook-info">
+              <h3>A Gift From The Stars</h3>
+              <p className="cookbook-description">
+                A unique collection of recipes celebrating culinary artistry and creativity.
+                This celebrity cookbook features Chef Daniel Racine's signature dishes and
+                innovative techniques that have defined his distinguished career.
+              </p>
+              <div className="cookbook-features">
+                <div className="feature-item">
+                  <FaUtensils />
+                  <span>Signature Recipes</span>
+                </div>
+                <div className="feature-item">
+                  <FaStar />
+                  <span>Professional Techniques</span>
+                </div>
+                <div className="feature-item">
+                  <FaHeart />
+                  <span>Culinary Stories</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Featured Cuisines */}
       <section className="cuisines-section section-padding">
         <div className="container">

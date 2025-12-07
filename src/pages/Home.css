@@ -25,9 +25,11 @@
 .specialty-card.animate-on-scroll:nth-child(1) {
 	transition-delay: 0.1s;
 }
+
 .specialty-card.animate-on-scroll:nth-child(2) {
 	transition-delay: 0.2s;
 }
+
 .specialty-card.animate-on-scroll:nth-child(3) {
 	transition-delay: 0.3s;
 }
@@ -35,9 +37,11 @@
 .achievement-card.animate-on-scroll:nth-child(1) {
 	transition-delay: 0.1s;
 }
+
 .achievement-card.animate-on-scroll:nth-child(2) {
 	transition-delay: 0.2s;
 }
+
 .achievement-card.animate-on-scroll:nth-child(3) {
 	transition-delay: 0.3s;
 }
@@ -45,15 +49,19 @@
 .cuisine-card.animate-on-scroll:nth-child(1) {
 	transition-delay: 0.1s;
 }
+
 .cuisine-card.animate-on-scroll:nth-child(2) {
 	transition-delay: 0.15s;
 }
+
 .cuisine-card.animate-on-scroll:nth-child(3) {
 	transition-delay: 0.2s;
 }
+
 .cuisine-card.animate-on-scroll:nth-child(4) {
 	transition-delay: 0.25s;
 }
+
 .cuisine-card.animate-on-scroll:nth-child(5) {
 	transition-delay: 0.3s;
 }
@@ -66,14 +74,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(
-			135deg,
+	background: linear-gradient(135deg,
 			rgba(26, 26, 26, 0.55) 0%,
 			rgba(45, 45, 45, 0.5) 50%,
-			rgba(26, 26, 26, 0.55) 100%
-		),
-		url("/images/gallery/Ontario Rack of Lamb with a Fig Demi.jpg") center
-			center / 70% auto no-repeat;
+			rgba(26, 26, 26, 0.55) 100%),
+		url("/images/gallery/Ontario Rack of Lamb with a Fig Demi.jpg") center center / 70% auto no-repeat;
 	background-attachment: fixed;
 	overflow: hidden;
 }
@@ -85,25 +90,23 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: radial-gradient(
-			circle at 20% 50%,
+	background-image: radial-gradient(circle at 20% 50%,
 			rgba(212, 165, 116, 0.15) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 80% 80%,
+			transparent 50%),
+		radial-gradient(circle at 80% 80%,
 			rgba(201, 160, 98, 0.15) 0%,
-			transparent 50%
-		);
+			transparent 50%);
 	animation: pulse 8s ease-in-out infinite;
 	z-index: 1;
 }
 
 @keyframes pulse {
+
 	0%,
 	100% {
 		opacity: 1;
 	}
+
 	50% {
 		opacity: 0.5;
 	}
@@ -115,16 +118,12 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: radial-gradient(
-			ellipse at center,
+	background: radial-gradient(ellipse at center,
 			transparent 0%,
-			rgba(0, 0, 0, 0.5) 100%
-		),
-		linear-gradient(
-			to bottom,
+			rgba(0, 0, 0, 0.5) 100%),
+		linear-gradient(to bottom,
 			rgba(26, 26, 26, 0.3) 0%,
-			rgba(26, 26, 26, 0.6) 100%
-		);
+			rgba(26, 26, 26, 0.6) 100%);
 	backdrop-filter: blur(1px);
 	z-index: 1;
 }
@@ -269,6 +268,7 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+
 	100% {
 		opacity: 0;
 		transform: translateY(20px);
@@ -296,11 +296,9 @@
 	align-items: center;
 	gap: 10px;
 	padding: 12px 30px;
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color),
+			var(--accent-color));
 	color: var(--white);
 	border-radius: 50px;
 	font-weight: 600;
@@ -347,11 +345,9 @@
 .stat-number {
 	font-size: 3rem;
 	font-weight: 700;
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color),
+			var(--accent-color));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -374,11 +370,9 @@
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color),
+			var(--accent-color));
 	color: var(--white);
 	padding: 10px 25px;
 	border-radius: 50px;
@@ -433,12 +427,10 @@
 	left: -100%;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(
-		90deg,
-		transparent,
-		rgba(255, 255, 255, 0.4),
-		transparent
-	);
+	background: linear-gradient(90deg,
+			transparent,
+			rgba(255, 255, 255, 0.4),
+			transparent);
 	animation: shimmer 3s infinite;
 }
 
@@ -463,11 +455,9 @@
 .title-underline {
 	width: 80px;
 	height: 4px;
-	background: linear-gradient(
-		90deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(90deg,
+			var(--secondary-color),
+			var(--accent-color));
 	margin-bottom: 30px;
 }
 
@@ -521,11 +511,9 @@
 	width: 80px;
 	height: 80px;
 	margin: 0 auto 25px;
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color),
+			var(--accent-color));
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -592,11 +580,9 @@
 	width: 80px;
 	height: 80px;
 	margin: 0 auto 25px;
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color),
-		var(--accent-color)
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color),
+			var(--accent-color));
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -712,11 +698,9 @@
 .cuisine-image .image-placeholder {
 	height: 100%;
 	border-radius: 0;
-	background: linear-gradient(
-		135deg,
-		var(--secondary-color) 0%,
-		var(--accent-color) 100%
-	);
+	background: linear-gradient(135deg,
+			var(--secondary-color) 0%,
+			var(--accent-color) 100%);
 	font-size: 2rem;
 	font-weight: 600;
 	color: var(--white);
@@ -731,6 +715,111 @@
 .cuisine-card p {
 	padding: 0 25px 25px;
 	color: var(--text-light);
+}
+
+/* Cookbook Section */
+.cookbook-section {
+	background: linear-gradient(135deg, var(--bg-light) 0%, #f0f0f0 100%);
+}
+
+.cookbook-showcase {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	align-items: center;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.cookbook-image-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.cookbook-cover {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+	transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.cookbook-cover:hover {
+	transform: translateY(-10px) rotateY(-5deg);
+	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+.cookbook-badge {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 25px;
+	background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+	color: var(--white);
+	border-radius: 50px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+}
+
+.cookbook-badge svg {
+	font-size: 1.1rem;
+}
+
+.cookbook-info {
+	padding: 20px 0;
+}
+
+.cookbook-info h3 {
+	font-size: 2.2rem;
+	color: var(--primary-color);
+	margin-bottom: 20px;
+	font-family: 'Playfair Display', serif;
+}
+
+.cookbook-description {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: var(--text-light);
+	margin-bottom: 30px;
+}
+
+.cookbook-features {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.feature-item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 15px 20px;
+	background: var(--white);
+	border-radius: 10px;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+	transition: var(--transition);
+}
+
+.feature-item:hover {
+	transform: translateX(10px);
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item svg {
+	font-size: 1.5rem;
+	color: var(--secondary-color);
+}
+
+.feature-item span {
+	font-weight: 500;
+	color: var(--primary-color);
 }
 
 /* CTA Section */
@@ -823,5 +912,24 @@
 
 	.cta-section h2 {
 		font-size: 2rem;
+	}
+
+	.cookbook-showcase {
+		grid-template-columns: 1fr;
+		gap: 40px;
+		text-align: center;
+	}
+
+	.cookbook-info h3 {
+		font-size: 1.8rem;
+	}
+
+	.cookbook-description {
+		font-size: 1rem;
+	}
+
+	.cookbook-badge {
+		padding: 10px 20px;
+		font-size: 0.8rem;
 	}
 }
