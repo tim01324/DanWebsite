@@ -324,10 +324,6 @@ const Home = () => {
                 alt="A Gift From The Stars - Celebrity Cookbook by Chef Daniel Racine"
                 className="cookbook-cover"
               />
-              <div className="cookbook-badge">
-                <FaBook />
-                <span>Celebrity Cookbook</span>
-              </div>
             </div>
             <div className="cookbook-info">
               <h3>A Gift From The Stars</h3>
